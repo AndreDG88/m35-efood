@@ -5,11 +5,10 @@ import { Props } from './tag-index'
 
 //configuração CSS do container.
 export const TagContainer = styled.div<Props>`
-  background-color: ${cores.verde};
+  background-color: ${cores.rosa};
   color: ${cores.branco};
-  font-size: ${(props) => (props.size === 'big' ? '16px' : '10px')};
+  font-size: 12px;
   font-weight: bold;
-  padding: ${(props) => (props.size === 'big' ? '8px 16px' : '4px 6px')};
-  border-radius: 8px;
+  padding: 4px 6px;
   display: inline-block;
 `

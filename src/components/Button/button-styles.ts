@@ -2,25 +2,25 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { cores } from '../../global-styles'
+import { Props } from '../Tag/tag-index'
 
 //configuração CSS do container.
-export const ButtonContainer = styled.button`
+export const ButtonContainer = styled.button<Props>`
   border: 2px solid ${cores.branco};
-  color: ${cores.branco};
-  background-color: transparent;
-  font-size: 16px;
+  color: ${cores.rosa};
+  border: none;
+  font-size: 14px;
   font-weight: bold;
-  padding: 8px 16px;
-  border-radius: 8px;
+  padding: 4px;
 `
 //configuração Para o link com react-router-dom.
 export const ButtonLink = styled(Link)`
-  border: 2px solid ${cores.branco};
+  border: 2px solid ${cores.rosa};
   color: ${cores.branco};
-  background-color: transparent;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
-  padding: 8px 16px;
-  text-decoration: none;
-  border-radius: 8px;
+  padding: 4px 6px;
+  display: inline-block;
+  margin-left: 8px;
+  margin-bottom: 8px;
 `
