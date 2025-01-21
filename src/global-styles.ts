@@ -3,16 +3,15 @@ import { createGlobalStyle } from 'styled-components'
 
 //Constante para as variáveis de cores.
 export const cores = {
-  rosa: '#e66767',
-  rosaClaro: '#ffebd9',
-  rosaClaroFundo: '#fff8f2',
-  branco: '#fff'
-}
-
-//Configuração de breakpoints para portabilidade.
-export const breakpoints = {
-  desktop: '1024px',
-  tablet: '768px'
+  branco: '#eee',
+  preto: '#111',
+  cinza: '#333',
+  cinzaClaro: '#a3a3a3',
+  verde: '#10ac84',
+  bege: '#FFEBD9',
+  RosaFundo: '#FFF8F2',
+  RosaFundoClaro: '#FFFFFF',
+  rosa: ' #E66767'
 }
 
 //Constante do css clobal.
@@ -27,8 +26,9 @@ export const GlobalCss = createGlobalStyle`
     list-style: none;
 
     body {
-      background-color: ${cores.rosaClaroFundo};
+      background-color: ${cores.RosaFundo};
       color: ${cores.rosa};
+      padding-top: 40px;
     }
   }
 
@@ -37,9 +37,5 @@ export const GlobalCss = createGlobalStyle`
     max-width: 1024px;
     width: 100%;
     margin: 0 auto;
-
-    @media (max-width: ${breakpoints.desktop}) {
-      max-width: 80%;
-    }
   }
 `

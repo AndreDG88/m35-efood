@@ -4,38 +4,40 @@ import { cores } from '../../global-styles'
 
 //Configuração CSS do container do rodapé
 export const Container = styled.footer`
-  background-color: ${cores.cinza};
-  padding: 32px 0;
+  background-color: ${cores.bege};
+  padding: 40px 0;
   font-size: 14px;
+  height: 298px;
 `
 export const FooterSection = styled.div`
-  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 `
-
-//Configuração CSS dos títulos.
-export const SectionTitle = styled.h4`
-  color: ${cores.branco};
-  font-size: 16px;
-  font-weight: bold;
-`
-
 //Configuração CSS da lista de links.
 export const Links = styled.ul`
   display: flex;
+  align-items: center;
   margin-top: 16px;
+  margin-bottom: 80px;
 `
 
 //Configuração CSS dos Links.
 export const Link = styled.a`
-  color: ${cores.cinzaClaro};
-  text-decoration: none;
   margin-right: 8px;
+  cursor: pointer;
 `
 
 //Configuração CSS do copyright.
 export const Copyright = styled.p`
+  width: 480px;
+  font-size: 10px;
+  text-align: center;
+  margin-bottom: 40px;
+
   a {
-    color: ${cores.verde};
+    color: ${cores.preto};
     text-decoration: none;
     cursor: pointer;
   }
