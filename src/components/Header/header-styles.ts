@@ -7,6 +7,7 @@ export const Headerbar = styled.header`
   align-items: center;
   justify-content: space-between;
   height: 384px;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -16,7 +17,10 @@ export const Headerbar = styled.header`
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    margin-top: 40px;
+  }
+
+  img {
+    margin-top: 64px;
   }
 `
 

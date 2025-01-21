@@ -1,4 +1,3 @@
-import Banner from '../../components/Banner/banner-index'
 import ProductsList from '../../components/ProductsList/productslist-index'
 import residentEvil from '../../assets/images/resident.png'
 import fifa23 from '../../assets/images/fifa-23.png'
@@ -7,6 +6,7 @@ import starWars from '../../assets/images/star_wars.png'
 import streetFighter from '../../assets/images/street-figther.png'
 import Zelda from '../../assets/images/zelda.png'
 import Game from '../../models/Game'
+import Header from '../../components/Header/header-index'
 
 //construtor dos jogos usados na página
 const promocoes: Game[] = [
@@ -98,7 +98,7 @@ const emBreve: Game[] = [
 //Arquivo de estruturação da página Home do site, usando o React Router Dom.
 const Home = () => (
   <>
-    <Banner />
+    <Header />
     <ProductsList games={promocoes} title="Promoções" background="gray" />
     <ProductsList games={emBreve} title="Em Breve" background="black" />
   </>
