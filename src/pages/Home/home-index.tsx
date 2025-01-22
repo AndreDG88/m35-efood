@@ -1,97 +1,82 @@
-import ProductsList from '../../components/ProductsList/productslist-index'
-import residentEvil from '../../assets/images/resident.png'
-import fifa23 from '../../assets/images/fifa-23.png'
-import diabloIv from '../../assets/images/diablo.png'
-import starWars from '../../assets/images/star_wars.png'
-import streetFighter from '../../assets/images/street-figther.png'
-import Zelda from '../../assets/images/zelda.png'
-import Game from '../../models/Game'
 import Header from '../../components/Header/header-index'
+import RestaurantsList from '../../components/RestaurantsList/restaurantList-index'
+import Restaurante from '../../models/Restaurante'
+import pratoSushi from '../../assets/images/pratos/prato-sushi.png'
+import pratoMacarrao from '../../assets/images/pratos/prato-macarrao.png'
 
 //construtor dos jogos usados na página
-const promocoes: Game[] = [
+const restaurantesLista: Restaurante[] = [
   {
     id: 1,
-    category: 'Ação',
+    destacado: true,
+    tipo: 'Japonesa',
+    infos: ['Japonesa'],
+    image: pratoSushi,
+    title: 'Hioki Sushi',
+    titulo: 'Hioki Sushi',
+    nota: 4.9,
     description:
-      'Resident Evil 4, conhecido no Japão como Biohazard 4, é um jogo eletrônico de survival horror...',
-    title: 'Resident Evil 4 - Remake',
-    system: 'Windows',
-    infos: ['10%', 'R$ 250,00'],
-    image: residentEvil
+      'Peça já o melhor da culinária japonesa no conforto da sua casa! Sushis frescos, sashimis deliciosos e pratos quentes irresistíveis. Entrega rápida, embalagens cuidadosas e qualidade garantida.Experimente o Japão sem sair do lar com nosso delivery!'
   },
   {
     id: 2,
-    category: 'Ação',
+    destacado: false,
+    tipo: 'Italiana',
+    infos: ['Italiana'],
+    image: pratoMacarrao,
+    title: 'La Dolce Vita Trattoria',
+    titulo: 'La Dolce Vita Trattoria',
+    nota: 4.6,
     description:
-      'Resident Evil 4, conhecido no Japão como Biohazard 4, é um jogo eletrônico de survival horror...',
-    title: 'Resident Evil 4 - Remake',
-    system: 'PS5',
-    infos: ['5%', 'R$ 290,00'],
-    image: residentEvil
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!'
   },
   {
     id: 3,
-    category: 'Esportes',
+    destacado: false,
+    tipo: 'Italiana',
+    infos: ['Italiana'],
+    image: pratoMacarrao,
+    title: 'La Dolce Vita Trattoria',
+    titulo: 'La Dolce Vita Trattoria',
+    nota: 4.6,
     description:
-      'EA SPORTS™ FIFA 23 traz o Jogo de Todo Mundo aos gramados com a tecnologia HyperMotion2...',
-    title: 'FIFA 23',
-    system: 'Windows',
-    infos: ['50%', 'R$ 99,90'],
-    image: fifa23
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!'
   },
   {
     id: 4,
-    category: 'Esportes',
+    destacado: false,
+    tipo: 'Italiana',
+    infos: ['Italiana'],
+    image: pratoMacarrao,
+    title: 'La Dolce Vita Trattoria',
+    titulo: 'La Dolce Vita Trattoria',
+    nota: 4.6,
     description:
-      'EA SPORTS™ FIFA 23 traz o Jogo de Todo Mundo aos gramados com a tecnologia HyperMotion2...',
-    title: 'FIFA 23',
-    system: 'PS5',
-    infos: ['50%', 'R$ 99,90'],
-    image: fifa23
-  }
-]
-
-const emBreve: Game[] = [
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!'
+  },
   {
     id: 5,
-    category: 'RPG',
+    destacado: false,
+    tipo: 'Italiana',
+    infos: ['Italiana'],
+    image: pratoMacarrao,
+    title: 'La Dolce Vita Trattoria',
+    titulo: 'La Dolce Vita Trattoria',
+    nota: 4.6,
     description:
-      'Diablo IV é um RPG de ação em desenvolvimento pela Blizzard Entertainment.',
-    title: 'Diablo IV',
-    system: 'Windows',
-    infos: ['17/05'],
-    image: diabloIv
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!'
   },
   {
     id: 6,
-    category: 'Aventura',
+    destacado: false,
+    tipo: 'Italiana',
+    infos: ['Italiana'],
+    image: pratoMacarrao,
+    title: 'La Dolce Vita Trattoria',
+    titulo: 'La Dolce Vita Trattoria',
+    nota: 4.6,
     description:
-      'Star Wars Jedi: Survivor é um próximo jogo de ação e aventura desenvolvido pela Respawn...',
-    title: 'Star Wars Jedi Survivor',
-    system: 'Windows',
-    infos: ['05/04'],
-    image: starWars
-  },
-  {
-    id: 7,
-    category: 'Luta',
-    description:
-      'Street Fighter 6 é um próximo jogo de luta desenvolvido e publicado pela Capcom.',
-    title: 'Street Fighter 6',
-    system: 'Windows',
-    infos: ['05/04'],
-    image: streetFighter
-  },
-  {
-    id: 8,
-    category: 'RPG',
-    description:
-      'Uma aventura épica pela terra e pelos céus de Hyrule aguarda em The Legend of Zelda™...',
-    title: 'The Legend of Zelda - TOK',
-    system: 'Switch',
-    infos: ['05/04'],
-    image: Zelda
+      'A La Dolce Vita Trattoria leva a autêntica cozinha italiana até você! Desfrute de massas caseiras, pizzas deliciosas e risotos incríveis, tudo no conforto do seu lar. Entrega rápida, pratos bem embalados e sabor inesquecível. Peça já!'
   }
 ]
 
@@ -99,8 +84,7 @@ const emBreve: Game[] = [
 const Home = () => (
   <>
     <Header />
-    <ProductsList games={promocoes} title="Promoções" background="gray" />
-    <ProductsList games={emBreve} title="Em Breve" background="black" />
+    <RestaurantsList restaurantes={restaurantesLista} />
   </>
 )
 

@@ -16,6 +16,8 @@ export const ButtonContainer = styled.button<Props>`
 //configuração Para o link com react-router-dom.
 export const ButtonLink = styled(Link)`
   border: 2px solid ${cores.rosa};
+  background-color: ${cores.rosa};
+  text-decoration: none;
   color: ${cores.branco};
   font-size: 12px;
   font-weight: bold;
