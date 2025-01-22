@@ -8,7 +8,6 @@ export const Imagem = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   display: block;
-  margin-bottom: 56px;
   width: 100%;
   height: 280px;
   position: relative;

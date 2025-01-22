@@ -2,6 +2,7 @@ import ProductsList from '../../components/ProductsList/productslist-index'
 import Banner from '../../components/Banner/banner-index'
 import Prato from '../../models/Prato'
 import pratoPizza from '../../assets/images/pratos/prato-pizza.png'
+import HeaderCart from '../../components/HeaderCart/headerCart-index'
 
 //construtor dos jogos usados na página
 const pratosDisponiveis: Prato[] = [
@@ -52,6 +53,7 @@ const pratosDisponiveis: Prato[] = [
 //Arquivo de estruturação da página Home do site, usando o React Router Dom.
 const Categories = () => (
   <>
+    <HeaderCart />
     <Banner />
     <ProductsList pratos={pratosDisponiveis} />
   </>
