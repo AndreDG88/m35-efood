@@ -28,7 +28,6 @@ export const GlobalCss = createGlobalStyle`
     body {
       background-color: ${cores.RosaFundo};
       color: ${cores.rosa};
-      padding-top: 40px;
     }
   }
 
