@@ -1,7 +1,7 @@
 //Arquivo de criação e configuração do container de armazenamento dos cards de produto.
+import { Restaurante } from '../../pages/Home/home-index'
 import Restaurant from '../Restaurant/restaurant-index'
 import { Container, List } from './restaurantsList-styles'
-import Restaurante from '../../models/Restaurante'
 
 //Configuração da tipagem das propriedades.
 export type Props = {
@@ -17,9 +17,9 @@ const RestaurantsList = ({ restaurantes }: Props) => (
           <Restaurant
             key={restaurante.id}
             id={restaurante.id}
-            nota={restaurante.nota}
-            description={restaurante.description}
-            image={restaurante.image}
+            nota={restaurante.avaliacao}
+            description={restaurante.descricao}
+            image={restaurante.capa}
             tipo={restaurante.tipo}
             name={restaurante.titulo}
             destaque={restaurante.destacado}

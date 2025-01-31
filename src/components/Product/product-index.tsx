@@ -18,21 +18,31 @@ import closeIcon from '../../assets/images/icones/fechar -icon.png'
 
 //Configuração de tipagem das Propriedades.
 type Props = {
-  title: string
-  description: string
-  image: string
+  id: number
+  nome: string
+  descricao: string
+  foto: string
+  porcao: string
+  preco: number
+}
+
+export const formataPreco = (preco = 0) => {
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL'
+  }).format(preco)
 }
 
 //Const principal do card.
-const Product = ({ title, description, image }: Props) => {
+const Product = ({ id, nome, descricao, foto, porcao, preco }: Props) => {
   const [modalAberto, SetModalAberto] = useState(false)
 
   return (
     <>
       <Card>
-        <img src={image} alt={title} />
-        <Titulo>{title}</Titulo>
-        <Descricao>{description}</Descricao>
+        <img src={foto} alt={nome} />
+        <Titulo>{nome}</Titulo>
+        <Descricao>{descricao}</Descricao>
         <ButtonContainer onClick={() => SetModalAberto(true)}>
           Adicionar ao carrinho
         </ButtonContainer>
@@ -40,14 +50,16 @@ const Product = ({ title, description, image }: Props) => {
       {/* MODAL */}
       <Modal className={modalAberto ? 'visivel' : ' '}>
         <ModalContent>
-          <FoodPhoto src={image} alt={title} />
+          <FoodPhoto src={foto} alt={nome} />
           <ModalContainer>
-            <FTitle>{title}</FTitle>
+            <FTitle>{nome}</FTitle>
             <FDescription>
-              {description}
-              <p>Serve: de 2 a 3 pessoas</p>
+              {descricao}
+              <p>Serve: {porcao}</p>
             </FDescription>
-            <CartButton>Adicionar ao carrinho - R$ 60.90</CartButton>
+            <CartButton>
+              Adicionar ao carrinho - ${formataPreco(preco)}
+            </CartButton>
           </ModalContainer>
           <Close
             onClick={() => SetModalAberto(false)}
