@@ -15,16 +15,15 @@ const ProductsList = ({ pratos }: Props) => {
       <div className="container">
         <List>
           {pratos.map((prato) => (
-            <li key={prato.id}>
-              <Product
-                id={prato.id}
-                descricao={prato.descricao}
-                nome={prato.nome}
-                foto={prato.foto}
-                porcao={prato.porcao}
-                preco={prato.preco}
-              />
-            </li>
+            <Product
+              key={prato.id}
+              id={prato.id}
+              descricao={prato.descricao}
+              nome={prato.nome}
+              foto={prato.foto}
+              porcao={prato.porcao}
+              preco={prato.preco}
+            />
           ))}
         </List>
       </div>
