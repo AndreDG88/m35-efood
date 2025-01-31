@@ -53,7 +53,7 @@ const Restaurant = ({
         </div>
       </TituloContainer>
       <Paragrafo>{description}</Paragrafo>
-      <ButtonLink to={`/categories/`}>Saiba mais</ButtonLink>
+      <ButtonLink to={`/restaurant/`}>Saiba mais</ButtonLink>
     </div>
   </Card>
 )

@@ -51,7 +51,7 @@ const pratosDisponiveis: Prato[] = [
 ]
 
 //Arquivo de estruturação da página Home do site, usando o React Router Dom.
-const Categories = () => (
+const RestaurantPlates = () => (
   <>
     <HeaderCart />
     <Banner />
@@ -60,4 +60,4 @@ const Categories = () => (
 )
 
 //Exportações.
-export default Categories
+export default RestaurantPlates
