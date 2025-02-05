@@ -13,7 +13,7 @@ const RestaurantPlates = () => {
   useEffect(() => {
     fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
       .then((res) => res.json())
-      .then((res) => setPratosDisponiveis(res))
+      .then((res) => setPratosDisponiveis(res.cardapio))
   }, [id])
 
   return (

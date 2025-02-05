@@ -37,12 +37,20 @@ export const formataPreco = (preco = 0) => {
 const Product = ({ id, nome, descricao, foto, porcao, preco }: Props) => {
   const [modalAberto, SetModalAberto] = useState(false)
 
+  //função para reduzir textos.
+  const getDescricao = (descricao: string) => {
+    if (descricao.length > 95) {
+      return descricao.slice(0, 92) + '...'
+    }
+    return descricao
+  }
+
   return (
     <>
       <Card>
         <img src={foto} alt={nome} />
         <Titulo>{nome}</Titulo>
-        <Descricao>{descricao}</Descricao>
+        <Descricao>{getDescricao(descricao)}</Descricao>
         <ButtonContainer onClick={() => SetModalAberto(true)}>
           Adicionar ao carrinho
         </ButtonContainer>
