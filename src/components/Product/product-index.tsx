@@ -34,7 +34,7 @@ export const formataPreco = (preco = 0) => {
 }
 
 //Const principal do card.
-const Product = ({ id, nome, descricao, foto, porcao, preco }: Props) => {
+const Product = ({ nome, descricao, foto, porcao, preco }: Props) => {
   const [modalAberto, SetModalAberto] = useState(false)
 
   //função para reduzir textos.

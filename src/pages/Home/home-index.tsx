@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useGetHomePageQuery } from '../../services/api'
 import Header from '../../components/Header/header-index'
 import RestaurantsList from '../../components/RestaurantsList/restaurantList-index'
 
@@ -24,20 +24,18 @@ export type Restaurante = {
 
 //Arquivo de estruturação da página Home do site, usando o React Router Dom.
 const Home = () => {
-  const [lojas, setLojas] = useState<Restaurante[]>([])
+  const { data: lojas } = useGetHomePageQuery()
 
-  useEffect(() => {
-    fetch('https://fake-api-tau.vercel.app/api/efood/restaurantes')
-      .then((res) => res.json())
-      .then((res) => setLojas(res))
-  }, [])
+  if (lojas) {
+    return (
+      <>
+        <Header />
+        <RestaurantsList restaurantes={lojas} />
+      </>
+    )
+  }
 
-  return (
-    <>
-      <Header />
-      <RestaurantsList restaurantes={lojas} />
-    </>
-  )
+  return <h4>Carregando...</h4>
 }
 
 //Exportações.

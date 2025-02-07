@@ -1,19 +1,20 @@
 //Arquivo de criação e configuração do banner de destaque da página.
 import { useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useGetFeatureEfoodQuery } from '../../services/api'
 import { Imagem, Textos } from './banner-styles'
-import { Restaurante } from '../../pages/Home/home-index'
 
 //Const principal do Banner.
 const Banner = () => {
   const { id } = useParams()
-  const [restaurant, setRestaurant] = useState<Restaurante>()
+  const { data: restaurant, isLoading } = useGetFeatureEfoodQuery(id || '')
 
-  useEffect(() => {
-    fetch(`https://fake-api-tau.vercel.app/api/efood/restaurantes/${id}`)
-      .then((res) => res.json())
-      .then((res) => setRestaurant(res))
-  }, [id])
+  if (!restaurant) {
+    return (
+      <div className="container">
+        <h3>Carregando...</h3>
+      </div>
+    )
+  }
 
   return (
     <Imagem style={{ backgroundImage: `url(${restaurant?.capa})` }}>
