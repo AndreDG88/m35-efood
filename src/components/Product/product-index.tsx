@@ -15,6 +15,8 @@ import {
   Titulo
 } from './product-styles'
 import closeIcon from '../../assets/images/icones/fechar -icon.png'
+import { add, open, CartItem } from '../../store/reducers/cart'
+import { useDispatch, useSelector } from 'react-redux'
 
 //Configuração de tipagem das Propriedades.
 type Props = {
@@ -36,6 +38,32 @@ export const formataPreco = (preco = 0) => {
 //Const principal do card.
 const Product = ({ nome, descricao, foto, porcao, preco }: Props) => {
   const [modalAberto, SetModalAberto] = useState(false)
+  const dispatch = useDispatch()
+
+  const items = useSelector(
+    (state: { cart: { items: CartItem[] } }) => state.cart.items
+  )
+
+  const addToCart = () => {
+    const item: CartItem = {
+      id: Date.now(), // Gere um ID único ou modifique conforme necessário
+      foto,
+      descricao,
+      preco,
+      nome,
+      porcao
+    }
+
+    const existingItem = items.find((cartItem) => cartItem.nome === item.nome)
+
+    if (!existingItem) {
+      dispatch(add(item))
+      dispatch(open())
+      SetModalAberto(false)
+    } else {
+      alert('O prato já está no carrinho!')
+    }
+  }
 
   //função para reduzir textos.
   const getDescricao = (descricao: string) => {
@@ -65,7 +93,7 @@ const Product = ({ nome, descricao, foto, porcao, preco }: Props) => {
               {descricao}
               <p>Serve: {porcao}</p>
             </FDescription>
-            <CartButton>
+            <CartButton onClick={addToCart}>
               Adicionar ao carrinho - ${formataPreco(preco)}
             </CartButton>
           </ModalContainer>
