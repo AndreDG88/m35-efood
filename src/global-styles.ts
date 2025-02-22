@@ -11,7 +11,8 @@ export const cores = {
   bege: '#FFEBD9',
   RosaFundo: '#FFF8F2',
   RosaFundoClaro: '#FFFFFF',
-  rosa: ' #E66767'
+  rosa: ' #E66767',
+  vermelho: 'red'
 }
 
 //Constante do css clobal.
