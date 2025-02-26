@@ -6,7 +6,7 @@ import { Props } from './tag-index'
 //configuração CSS do container.
 export const TagContainer = styled.div<Props>`
   background-color: ${cores.rosa};
-  color: ${cores.branco};
+  color: ${cores.bege};
   font-size: 12px;
   font-weight: bold;
   padding: 4px 6px;

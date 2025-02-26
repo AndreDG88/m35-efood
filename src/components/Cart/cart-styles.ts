@@ -34,9 +34,9 @@ export const Sidebar = styled.aside`
   width: 100%;
   max-height: 1624px;
   height: 100%;
-  position: relative; // Changed from left to relative positioning
+  position: relative;
   gap: 0px;
-  opacity: 1; // Changed from 0px to 1 for visibility
+  opacity: 1;
   z-index: 1;
   padding: 16px 8px;
 
@@ -44,7 +44,7 @@ export const Sidebar = styled.aside`
     max-width: 100%;
     width: 100%;
     max-height: 24px;
-    height: 24px; // Adjusted height for visibility
+    height: 24px;
   }
 
   .empty-text {

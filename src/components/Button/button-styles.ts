@@ -18,7 +18,7 @@ export const ButtonLink = styled(Link)`
   border: 2px solid ${cores.rosa};
   background-color: ${cores.rosa};
   text-decoration: none;
-  color: ${cores.branco};
+  color: ${cores.bege};
   font-size: 12px;
   font-weight: bold;
   padding: 4px 6px;

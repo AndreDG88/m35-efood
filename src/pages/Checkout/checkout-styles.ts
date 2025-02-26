@@ -30,7 +30,7 @@ export const InputGroup = styled.div`
     max-height: 32px;
     height: 100%;
     padding: 8px;
-    border: 1px solid ${cores.bege};
+    border: 1px solid ${cores.rosa};
     background-color: ${cores.bege};
     font-family: Roboto;
     font-size: 14px;
@@ -40,7 +40,7 @@ export const InputGroup = styled.div`
 
     &.error {
       border: 2px solid red; /* Borda preta para campos com erro */
-      background: ${cores.vermelho};
+      background: ${cores.RosaFundoClaro};
     }
   }
 
@@ -68,13 +68,13 @@ export const InputGroupPaymentBlock = styled.div`
     font-weight: 700;
     line-height: 16.41px;
     text-align: left;
-    color: ${cores.branco};
+    color: ${cores.bege};
     margin-bottom: 8px;
   }
 
   input,
   select {
-    width: 100%; /* Ajusta a largura do input ao contêiner */
+    width: 100%;
     height: 32px;
     background-color: ${cores.bege};
     border: none;
@@ -86,7 +86,7 @@ export const InputGroupPaymentBlock = styled.div`
 
     &.error {
       border: 2px solid red; /* Borda preta para campos com erro */
-      background: ${cores.vermelho};
+      background: ${cores.RosaFundoClaro};
     }
   }
 `
@@ -119,7 +119,7 @@ export const InputGroupPaymentFlex = styled.div`
 
       &.error {
         border: 2px solid red; /* Borda preta para campos com erro */
-        background: ${cores.vermelho};
+        background: ${cores.RosaFundoClaro};
       }
     }
   }
@@ -139,7 +139,7 @@ export const InputGroupPaymentFlex = styled.div`
 
       &.error {
         border: 2px solid red; /* Borda preta para campos com erro */
-        background: ${cores.vermelho};
+        background: ${cores.RosaFundoClaro};
       }
     }
   }
@@ -150,19 +150,19 @@ export const InputGroupPaymentFlex = styled.div`
     font-weight: 700;
     line-height: 16.41px;
     text-align: left;
-    color: ${cores.branco};
+    color: ${cores.bege};
     margin-bottom: 8px;
   }
 
   input,
   select {
     height: 32px;
-    background-color: ${cores.branco};
-    border: 1px solid ${cores.bege}; /* Borda padrão */
+    background-color: ${cores.bege};
+    border: 1px solid ${cores.rosa}; /* Borda padrão */
 
     &.error {
       border: 2px solid red; /* Borda preta para campos com erro */
-      background: ${cores.vermelho};
+      background: ${cores.RosaFundoClaro};
     }
   }
 
@@ -177,7 +177,7 @@ export const TitleH3 = styled.h3`
   font-weight: 700;
   line-height: 18.75px;
   text-align: left;
-  color: ${cores.branco};
+  color: ${cores.bege};
   margin-bottom: 16px;
 `
 
@@ -187,7 +187,7 @@ export const Paragrafo = styled.p`
   font-weight: 400;
   line-height: 22px;
   text-align: left;
-  color: ${cores.branco};
+  color: ${cores.bege};
 `
 
 export const TabButton = styled.div`
@@ -195,8 +195,8 @@ export const TabButton = styled.div`
   ${ButtonContainer} {
     max-width: 344px;
     width: 100%;
-    background-color: ${cores.branco};
-    color: ${cores.bege};
+    background-color: ${cores.bege};
+    color: ${cores.rosa};
     padding: 4px 0;
     margin-bottom: 8px;
   }
