@@ -2,6 +2,17 @@
 import styled from 'styled-components'
 import { ButtonContainer } from '../../components/Button/button-styles'
 import { cores } from '../../global-styles'
+import { Card } from '../../components/Restaurant/restaurant-styles'
+
+export const CheckoutBox = styled.div`
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
+
+  ${Card} {
+    background-color: ${cores.rosa};
+  }
+`
 
 export const Row = styled.div`
   display: block;

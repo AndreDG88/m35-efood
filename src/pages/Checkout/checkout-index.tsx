@@ -113,7 +113,7 @@ const Checkout = ({ onClose }: { onClose: () => void }) => {
   }
 
   //função de checagem dos inputs de entrega.
-  const checkAdressInputs = () => {
+  const handleContinueToPayment = () => {
     form.setTouched({
       fullName: true,
       endereco: true,
@@ -128,7 +128,7 @@ const Checkout = ({ onClose }: { onClose: () => void }) => {
     })
 
     //função para verificar erros e inputs vazios
-    const isValidInputs =
+    const isDeliveryValid =
       !form.errors.fullName &&
       !form.errors.endereco &&
       !form.errors.cidade &&
@@ -140,7 +140,7 @@ const Checkout = ({ onClose }: { onClose: () => void }) => {
       form.values.cep !== '' &&
       form.values.numero !== ''
 
-    if (isValidInputs) {
+    if (isDeliveryValid) {
       setPayMethod(true)
     }
   }
@@ -175,7 +175,7 @@ const Checkout = ({ onClose }: { onClose: () => void }) => {
   }
 
   return (
-    <div className="container">
+    <S.CheckoutBox>
       {!isOpenCart && isSuccess && data ? (
         <Card>
           <>
@@ -298,7 +298,7 @@ const Checkout = ({ onClose }: { onClose: () => void }) => {
                   <Button
                     type="button"
                     title="Continuar com o pagamento"
-                    onClick={checkAdressInputs}
+                    onClick={handleContinueToPayment}
                     disabled={isLoading}
                   >
                     {isLoading
@@ -437,7 +437,7 @@ const Checkout = ({ onClose }: { onClose: () => void }) => {
           </div>
         </Card>
       )}
-    </div>
+    </S.CheckoutBox>
   )
 }
 

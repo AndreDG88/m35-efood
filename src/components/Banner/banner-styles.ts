@@ -1,6 +1,6 @@
 //Arquivo de configuração do CSS do banner da página.
 import styled from 'styled-components'
-import { cores } from '../../global-styles'
+import { breakpoints, cores } from '../../global-styles'
 
 //configuração CSS da imagem de fundo.
 export const Imagem = styled.div`
@@ -34,12 +34,34 @@ export const Textos = styled.div`
   font-size: 32px;
 
   span {
+    font-size: 32px;
     font-weight: 100;
     z-index: 1;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      font-size: 24px;
+      margin-left: 20px;
+    }
+
+    @media (max-width: ${breakpoints.mobile}) {
+      font-size: 24px;
+      margin-left: 20px;
+    }
   }
 
   h3 {
+    font-size: 32px;
     font-weight: 900;
     z-index: 1;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      font-size: 28px;
+      margin-left: 20px;
+    }
+
+    @media (max-width: ${breakpoints.mobile}) {
+      font-size: 28px;
+      margin-left: 20px;
+    }
   }
 `

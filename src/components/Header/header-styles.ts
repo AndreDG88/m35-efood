@@ -1,5 +1,6 @@
 //Arquivo de configuração do CSS do Cabeçalho da página.
 import styled from 'styled-components'
+import { breakpoints } from '../../global-styles'
 
 //configuração CSS da barra de fundo.
 export const Headerbar = styled.header`
@@ -21,6 +22,16 @@ export const Headerbar = styled.header`
 
   img {
     margin-top: 64px;
+
+    @media (max-width: ${breakpoints.tablet}) {
+      margin-top: 40px;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: ${breakpoints.mobile}) {
+      margin-top: 40px;
+      margin-bottom: 0;
+    }
   }
 `
 
@@ -29,5 +40,26 @@ export const Slogan = styled.h2`
   font-size: 36px;
   margin-bottom: 40px;
   width: 539px;
+  height: 84px;
   text-align: center;
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 100%;
+    height: 100%;
+    font-size: 28px;
+    font-weight: 900;
+    line-height: 42.19px;
+    margin-top: 138.5px;
+    font-size: 28px;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 100%;
+    height: 100%;
+    font-size: 36px;
+    font-weight: 900;
+    line-height: 42.19px;
+    margin-top: 138.5px;
+    font-size: 28px;
+  }
 `

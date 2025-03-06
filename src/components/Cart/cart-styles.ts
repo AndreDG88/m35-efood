@@ -45,6 +45,8 @@ export const Sidebar = styled.aside`
     width: 100%;
     max-height: 24px;
     height: 24px;
+    cursor: pointer;
+    background-color: ${cores.bege};
   }
 
   .empty-text {

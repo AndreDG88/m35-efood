@@ -34,17 +34,22 @@ const Cart = () => {
   //função de encaminhamento ao checkout.
   const goToCheckout = () => {
     setShowCheckout(true)
-    closeCart()
   }
 
   return (
     <>
       <CartContainer className={isOpen ? 'isOpen' : ''}>
         {/* overlay */}
-        {!showCheckout && <Overlay onClick={closeCart} />}
+        <Overlay onClick={closeCart} />
         {/* barra lateral*/}
         <Sidebar>
-          {items.length > 0 ? (
+          {items.length === 0 && (
+            <p className="empty-text">
+              O carrinho está vazio, adicione pelo menos um produto para
+              continuar com a compra
+            </p>
+          )}
+          {!showCheckout && items.length > 0 && (
             <>
               <ul>
                 {items.map((item) => (
@@ -69,15 +74,10 @@ const Cart = () => {
                 Continuar com a entrega
               </Button>
             </>
-          ) : (
-            <p className="empty-text">
-              O carrinho está vazio, adicione pelo menos um produto para
-              continuar com a compra
-            </p>
           )}
+          {showCheckout && <Checkout onClose={() => setShowCheckout(false)} />}
         </Sidebar>
       </CartContainer>
-      {showCheckout && <Checkout onClose={() => setShowCheckout(false)} />}
     </>
   )
 }

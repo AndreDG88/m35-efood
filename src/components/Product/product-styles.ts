@@ -1,6 +1,6 @@
 //Arquivo de configuração do CSS dos cards de produto.
 import styled from 'styled-components'
-import { cores } from '../../global-styles'
+import { breakpoints, cores } from '../../global-styles'
 import { ButtonContainer } from '../Button/button-styles'
 
 //Configuração CSS do container do card.
@@ -75,6 +75,10 @@ export const ModalContent = styled.div`
   flex-direction: row;
   position: relative;
   z-index: 1;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    display: block;
+  }
 `
 export const FoodPhoto = styled.img`
   object-fit: cover;
@@ -82,6 +86,13 @@ export const FoodPhoto = styled.img`
   height: 280px;
   margin: 32px 24px 32px 32px;
   object-fit: cover;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 70%;
+    height: 70%;
+    display: block;
+    margin: 24px;
+  }
 `
 export const ModalContainer = styled.div`
   max-width: 656px;
@@ -94,6 +105,10 @@ export const FTitle = styled.h3`
   color: ${cores.branco};
   line-height: 21.09px;
   display: block;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    padding: 16px;
+  }
 `
 export const FDescription = styled.p`
   font-size: 14px;
@@ -105,6 +120,16 @@ export const FDescription = styled.p`
   p {
     margin-top: 16px;
   }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    font-size: 13px;
+    line-height: 20px;
+    padding: 16px;
+
+    p {
+      margin-top: 6px;
+    }
+  }
 `
 export const Close = styled.img`
   max-width: 16px;
@@ -112,6 +137,10 @@ export const Close = styled.img`
   width: 100%;
   margin: 8px;
   cursor: pointer;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    margin-left: 340px;
+  }
 `
 
 export const CartButton = styled.button`
@@ -124,4 +153,8 @@ export const CartButton = styled.button`
   text-align: center;
   font-size: 14px;
   cursor: pointer;
+
+  @media (max-width: ${breakpoints.mobile}) {
+    margin-left: 16px;
+  }
 `

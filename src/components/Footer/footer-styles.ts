@@ -1,6 +1,6 @@
 //Arquivo de configuração do CSS do rodapé da página.
 import styled from 'styled-components'
-import { cores } from '../../global-styles'
+import { breakpoints, cores } from '../../global-styles'
 
 //Configuração CSS do container do rodapé
 export const Container = styled.footer`
@@ -34,11 +34,18 @@ export const Copyright = styled.p`
   width: 480px;
   font-size: 10px;
   text-align: center;
-  margin-bottom: 40px;
 
   a {
     color: ${cores.preto};
     text-decoration: none;
     cursor: pointer;
+  }
+
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 100%;
+  }
+
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 100%;
   }
 `
